@@ -1,0 +1,76 @@
+<app-navbar></app-navbar>
+
+
+<section class="py-8 py-md-11 border-bottom">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8 text-center">
+        
+        <!-- Headin -->
+        <h1 class="display-2">
+          Categories
+        </h1>
+
+        <!-- Text -->
+        <p class="lead text-muted mb-7 mb-md-9">
+        List of categories
+        </p>
+
+      </div>
+    </div> <!-- / .row -->
+    </div>
+  
+</section>
+
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+       <div class="mb-5" *ngFor="let category of data">
+         <h2>
+            {{ category.title }}
+         </h2>
+         <p>
+           {{ category.description }}
+         </p>
+
+         <div class="row">
+
+         <div class="col-12 col-md-3 d-flex"  *ngFor="let opens of category.opening">
+
+          <div class="card shadow-light-lg">
+              <img src="{{ opens.poster }}" alt="..." class="card-img-top img-responsive small-image">
+
+            <div class="card-body">
+              <p>
+                {{ opens.title }}
+              </p>
+              <small>
+                {{ opens.vacancy }} Vacancies left
+              </small>
+            </div>
+          </div>
+
+
+         </div>
+
+         </div>
+
+         <a href="" class="text-center">
+           View all
+         </a>
+
+         <hr>
+        
+       </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<app-footer></app-footer>

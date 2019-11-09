@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white border-bottom">
+
+  <div class="container">
+  
+
+    <!-- Brand -->
+    <a class="navbar-brand" routerLink="/">
+      Usajili
+    </a>
+
+    <!-- Toggler -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapse -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fe fe-x"></i>
+      </button>
+
+    
+      <!-- Navigation -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item" *ngIf="loggedIn">
+            <a routerLink="/" class="nav-link">Home</a>
+          </li>
+
+          <li class="nav-item" *ngIf="loggedIn">
+              <a routerLink="/categories" class="nav-link">Categories</a>
+            </li>
+
+  
+
+        <li class="nav-item" *ngIf="!loggedIn">
+            <a routerLink="/auth/sign-in" class="nav-link">Sign In</a>
+        </li>
+
+        <li class="nav-item" *ngIf="!loggedIn">
+            <a routerLink="/auth/sign-up" class="btn btn-primary nav-btn">Sign Up</a>
+        </li>
+
+        <li class="nav-item" ngbDropdown>
+            <div ngbDropdown class="d-inline-block">
+                <a class="nav-link" href="#" id="dropdownBasic1" ngbDropdownToggle>Account</a>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <a class="dropdown-item" routerLink='/profile'>Profile</a>
+                  <a class="dropdown-item" routerLink='/settings'>Settings</a>
+                  <a class="dropdown-item" routerLink='/settings'>Enrollments</a>
+                  <div class="dropdown-divider"></div>
+                  <button class="dropdown-item" (click)="logout()">Logout</button>
+                </div>
+              </div>
+        </li>
+
+        
+           
+      
+      </ul>
+
+
+
+    </div>
+
+    </div>
+
+  
+</nav>
